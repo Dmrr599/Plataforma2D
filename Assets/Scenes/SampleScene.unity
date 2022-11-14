@@ -311,18 +311,26 @@ MonoBehaviour:
   velocidadDeMovimiento: 10
   fuerzaDeSalto: 14
   velocidadDash: 20
+  velocidadDeslizar: 1.5
   layerPiso:
     serializedVersion: 2
     m_Bits: 64
   radioDeColision: 0.1
   abajo: {x: 0, y: -0.8}
+  derecha: {x: 0.6, y: 0}
+  izquierda: {x: -0.6, y: 0}
   puedeMover: 1
-  enSuelo: 1
+  enSuelo: 0
   puedeDash: 0
   haciendoDash: 0
   tocadoPiso: 0
   haciendoShake: 0
   estaAtacando: 0
+  enMuro: 0
+  muroDerecho: 0
+  muroIzquierdo: 0
+  agarrarse: 0
+  saltarDeMuro: 0
 --- !u!70 &184507882
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
