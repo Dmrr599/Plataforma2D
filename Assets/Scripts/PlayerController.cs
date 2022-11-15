@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 direccion;
     private CinemachineVirtualCamera cm;
     private Vector2 direccionMovimiento;
+    private bool bloqueado;
     
     [Header("Estadisticas")]
     public float velocidadDeMovimiento = 10;
@@ -43,6 +44,11 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         cm = GameObject.FindGameObjectWithTag("VirtualCamera").GetComponent<CinemachineVirtualCamera>();
     }
+
+    public void SetBloqueadoTrue()
+    {
+        bloqueado = true;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -75,6 +81,7 @@ public class PlayerController : MonoBehaviour
     public void FinalizarAtaque()
     {
         anim.SetBool("atacar", false);
+        bloqueado = false;
         estaAtacando = false;
     }
 
@@ -171,7 +178,7 @@ public class PlayerController : MonoBehaviour
 
         agarrarse = enMuro && Input.GetKey(KeyCode.LeftShift);
 
-        if(enMuro)
+        if(agarrarse && !enSuelo)
         {
             anim.SetBool("escalar", true);
             if(rb.velocity == Vector2.zero)
@@ -213,10 +220,10 @@ public class PlayerController : MonoBehaviour
 
         if (enMuro && !enSuelo)
         {
+            anim.SetBool("escalar", true);
+
             if (x != 0 && !agarrarse)
-            {
                 DeslizarPared();
-            }
         }
 
         MejorarSalto();
@@ -237,14 +244,14 @@ public class PlayerController : MonoBehaviour
            
         }
         
-        if(Input.GetKeyDown(KeyCode.X) && !haciendoDash) // Verifica si presiona la tecla x
-        { // Accede a la camara principal // Accede al efecto // Lo transmite en la posicion actual
-            // Camera.main.GetComponent<RippleEffect>().Emit(transform.position);
+        if(Input.GetKeyDown(KeyCode.X) && !haciendoDash && !puedeDash)
+        { 
             if(xRaw != 0 || yRaw != 0)
                 Dash(xRaw, yRaw);
         }
 
-        if(enSuelo && !tocadoPiso){
+        if(enSuelo && !tocadoPiso)
+        {
             anim.SetBool("escalar", false);
 
             TocarPiso();
@@ -286,9 +293,13 @@ public class PlayerController : MonoBehaviour
 
         Vector2 direccionMuro = muroDerecho ? Vector2.left : Vector2.right;
 
-        if(direccion.x < 0 && transform.localScale.x > 0)
+        if(direccionMuro.x < 0 && transform.localScale.x > 0)
         {
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+        }
+        else if(direccionMuro.x > 0 && transform.localScale.x < 0)
+        {
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }
 
         anim.SetBool("saltar", true);
@@ -351,52 +362,59 @@ public class PlayerController : MonoBehaviour
 
     private void Caminar()
     {
-        if(saltarDeMuro)
+        if(puedeMover && !haciendoDash && !estaAtacando)
         {
-            rb.velocity = Vector2.Lerp(rb.velocity, (new Vector2(direccion.x * velocidadDeMovimiento, rb.velocity.y)), Time.deltaTime / 2);
-        }
-        else
-        {
-            if(puedeMover && !haciendoDash)
-        {
-
-            if(direccion != Vector2.zero && !agarrarse)
+            if(saltarDeMuro)
             {
-                if (!enSuelo)
-                {
-                    // anim.SetBool("caer", true);
-                    anim.SetBool("saltar", true);
-                }
-                else
-                {
-                    anim.SetBool("caminar", true);
-                }
-
-                rb.velocity = (new Vector2(direccion.x * velocidadDeMovimiento, rb.velocity.y));
-
-                if(direccion.x < 0 && transform.localScale.x > 0)
-                {
-
-                    direccionMovimiento = DireccionAtaque(Vector2.left, direccion);
-                    transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
-                }else if(direccion.x > 0 && transform.localScale.x < 0)
-                {
-                    direccionMovimiento = DireccionAtaque(Vector2.right, direccion);
-                    transform.localScale = new Vector3(Mathf.Abs(-transform.localScale.x), transform.localScale.y, transform.localScale.z); 
-                }
-
+                rb.velocity = Vector2.Lerp(rb.velocity, 
+                (new Vector2(direccion.x * velocidadDeMovimiento, rb.velocity.y)), Time.deltaTime / 2);
             }
             else
             {
-                if (direccion.y > 0 && direccion.x == 0)
+                if(direccion != Vector2.zero && !agarrarse)
                 {
-                    direccionMovimiento = DireccionAtaque(direccion, Vector2.up);
+                    if (!enSuelo)
+                    {
+                        // anim.SetBool("caer", true);
+                        anim.SetBool("saltar", true);
+                    }
+                    else
+                    {
+                        anim.SetBool("caminar", true);
+                    }
+
+                    rb.velocity = (new Vector2(direccion.x * velocidadDeMovimiento, rb.velocity.y));
+
+                    if(direccion.x < 0 && transform.localScale.x > 0)
+                    {
+                        direccionMovimiento = DireccionAtaque(Vector2.left, direccion);
+                        transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+                    }
+                    else if(direccion.x > 0 && transform.localScale.x < 0)
+                    {
+                        direccionMovimiento = DireccionAtaque(Vector2.right, direccion);
+                        transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z); 
+                    }
+
                 }
-                anim.SetBool("caminar", false);
-            }    
-        }
-        
+                else
+                {
+                    if (direccion.y > 0 && direccion.x == 0)
+                    {
+                        direccionMovimiento = DireccionAtaque(direccion, Vector2.up);
+                    }
+                    anim.SetBool("caminar", false);
+                }    
+            }
+            }
+            else
+            {
+                if(bloqueado)
+                {
+                    FinalizarAtaque();
+                }
+            }
+
         }
         
     }
-}
