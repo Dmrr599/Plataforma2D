@@ -7041,6 +7041,7 @@ GameObject:
   - component: {fileID: 1969952035}
   - component: {fileID: 1969952034}
   - component: {fileID: 1969952033}
+  - component: {fileID: 1969952038}
   m_Layer: 3
   m_Name: Bat
   m_TagString: Enemigo
@@ -7172,6 +7173,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1969952038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969952032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be10b06006f243143b8baee321895047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidadDeMovimiento: 3
+  radioDeDeteccion: 7
+  layerJugador:
+    serializedVersion: 2
+    m_Bits: 64
+  posicionCabeza: {x: 0.1, y: 0.45}
+  enCabeza: 0
+  vidas: 3
+  nombre: Bat
 --- !u!1 &1978026263
 GameObject:
   m_ObjectHideFlags: 0
