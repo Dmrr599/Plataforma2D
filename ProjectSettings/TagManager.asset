@@ -6,6 +6,11 @@ TagManager:
   tags:
   - VirtualCamera
   - Enemigo
+  - Destruible
+  - Plataforma
+  - Moneda
+  - PowerUp
+  - CheckPoint
   layers:
   - Default
   - TransparentFX

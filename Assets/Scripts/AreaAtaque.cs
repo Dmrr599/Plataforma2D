@@ -11,6 +11,19 @@ public class AreaAtaque : MonoBehaviour
             {
                 collision.GetComponent<Bat>().RecibirDaño();
             }
+            else if(collision.name == "Skeleton")
+            {
+                collision.GetComponent<Skeleton>().RecibirDaño();
+            }else if(collision.name == "Spider")
+            {
+                collision.GetComponent<Waypoints>().RecibirDaño();
+            }
         }
+        else if (collision.CompareTag("Destruible"))
+            {
+                collision.GetComponent<Animator>().SetBool("destruir", true);
+            }
     }
 }
+
+

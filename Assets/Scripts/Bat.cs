@@ -84,7 +84,7 @@ public class Bat : MonoBehaviour
             }
             else
             {
-                // player.RecibirDaño((transform.position - player.transform.position).normalized);
+                 player.RecibirDaño((transform.position - player.transform.position).normalized);
             }
         }
     }
