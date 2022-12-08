@@ -524,7 +524,7 @@ Transform:
   - {fileID: 684292369}
   - {fileID: 2003020088}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &176097440
 GameObject:
@@ -821,7 +821,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &280122596
 GameObject:
@@ -1337,7 +1337,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &508152839
 GameObject:
@@ -1704,8 +1704,135 @@ Transform:
   - {fileID: 282464866}
   - {fileID: 2032980390}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &603438460
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1249681300345479920, guid: c452bb1a7fe7117438abf476b5d41030, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1249681300345479920, guid: c452bb1a7fe7117438abf476b5d41030, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.4344773
+      objectReference: {fileID: 0}
+    - target: {fileID: 1249681300345479920, guid: c452bb1a7fe7117438abf476b5d41030, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.5334246
+      objectReference: {fileID: 0}
+    - target: {fileID: 1249681300345479920, guid: c452bb1a7fe7117438abf476b5d41030, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1249681300345479920, guid: c452bb1a7fe7117438abf476b5d41030, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1249681300345479920, guid: c452bb1a7fe7117438abf476b5d41030, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1249681300345479920, guid: c452bb1a7fe7117438abf476b5d41030, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1249681300345479920, guid: c452bb1a7fe7117438abf476b5d41030, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1249681300345479920, guid: c452bb1a7fe7117438abf476b5d41030, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1249681300345479920, guid: c452bb1a7fe7117438abf476b5d41030, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1249681300345479920, guid: c452bb1a7fe7117438abf476b5d41030, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1249681300345479921, guid: c452bb1a7fe7117438abf476b5d41030, type: 3}
+      propertyPath: textDialogos
+      value: 
+      objectReference: {fileID: 1701107155}
+    - target: {fileID: 1249681300345479921, guid: c452bb1a7fe7117438abf476b5d41030, type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 184507882}
+    - target: {fileID: 1249681300345479921, guid: c452bb1a7fe7117438abf476b5d41030, type: 3}
+      propertyPath: imagenCaraDialogo
+      value: 
+      objectReference: {fileID: 666514760}
+    - target: {fileID: 1249681300345479921, guid: c452bb1a7fe7117438abf476b5d41030, type: 3}
+      propertyPath: dialogo.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1249681300345479921, guid: c452bb1a7fe7117438abf476b5d41030, type: 3}
+      propertyPath: dialogo.Array.data[0]
+      value: "Hola \xBFcomo estas? Bienvenido a mi juego Phantomas 2D. Te dare algunas
+        recomendaciones de como puedes utlizarlo"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1249681300345479921, guid: c452bb1a7fe7117438abf476b5d41030, type: 3}
+      propertyPath: dialogo.Array.data[1]
+      value: Con las "Flechas de navegacion" podras avanzar y retroceder por este
+        mundo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1249681300345479921, guid: c452bb1a7fe7117438abf476b5d41030, type: 3}
+      propertyPath: dialogo.Array.data[2]
+      value: La tecla de "Espacio" te servira para saltar
+      objectReference: {fileID: 0}
+    - target: {fileID: 1249681300345479921, guid: c452bb1a7fe7117438abf476b5d41030, type: 3}
+      propertyPath: dialogo.Array.data[3]
+      value: Podras activar tu espada oprimiendo la tecla "z"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1249681300345479921, guid: c452bb1a7fe7117438abf476b5d41030, type: 3}
+      propertyPath: dialogo.Array.data[4]
+      value: Para correr mas rapido ocupa las teclas de "Espacio" y "X"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1249681300345479921, guid: c452bb1a7fe7117438abf476b5d41030, type: 3}
+      propertyPath: dialogo.Array.data[5]
+      value: Podras ir escalando por los muros con solo saltar hacia ellos por un
+        lado
+      objectReference: {fileID: 0}
+    - target: {fileID: 1249681300345479921, guid: c452bb1a7fe7117438abf476b5d41030, type: 3}
+      propertyPath: dialogo.Array.data[6]
+      value: "Podras abrir los cofres utilizando la tecla \"C\",  \xA1Ten cuidado
+        pueden contener premios o enemigos!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1249681300345479921, guid: c452bb1a7fe7117438abf476b5d41030, type: 3}
+      propertyPath: dialogo.Array.data[7]
+      value: Cuando veas una estatua durante el juego posicionate en ella y oprime
+        la tecla "C" para guardar tu partida
+      objectReference: {fileID: 0}
+    - target: {fileID: 1249681300345479921, guid: c452bb1a7fe7117438abf476b5d41030, type: 3}
+      propertyPath: dialogo.Array.data[8]
+      value: 'Una vez que ya conoces como manipularlo, ve a la estatua del nivel
+        1 y oprime la tecla "C" para comenzar '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1249681300345479921, guid: c452bb1a7fe7117438abf476b5d41030, type: 3}
+      propertyPath: dialogo.Array.data[9]
+      value: Para pasar al siguiente nivel acciona la palanca con la tecla "C"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1249681300345479921, guid: c452bb1a7fe7117438abf476b5d41030, type: 3}
+      propertyPath: dialogo.Array.data[10]
+      value: Si tomas la posion te causara inmunidad durante 3 segundos
+      objectReference: {fileID: 0}
+    - target: {fileID: 1249681300345479921, guid: c452bb1a7fe7117438abf476b5d41030, type: 3}
+      propertyPath: dialogo.Array.data[11]
+      value: "Espero lo  disfrutes \xA1Mucha Suerte!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1249681300345479925, guid: c452bb1a7fe7117438abf476b5d41030, type: 3}
+      propertyPath: m_Name
+      value: Vendedor
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c452bb1a7fe7117438abf476b5d41030, type: 3}
 --- !u!1 &629599012
 GameObject:
   m_ObjectHideFlags: 0
@@ -2205,7 +2332,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &792751822
 GameObject:
@@ -8068,7 +8195,7 @@ RectTransform:
   - {fileID: 1056132151}
   - {fileID: 2022185087}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8609,7 +8736,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1172332594
 GameObject:
@@ -9100,7 +9227,7 @@ Transform:
   m_Children:
   - {fileID: 6814246}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1391776988
 GameObject:
@@ -9135,7 +9262,7 @@ Transform:
   m_Children:
   - {fileID: 1056720910}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1391776990
 BoxCollider2D:
@@ -9366,7 +9493,7 @@ RectTransform:
   - {fileID: 866793218}
   - {fileID: 2139538200}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -9639,7 +9766,7 @@ Transform:
   m_Children:
   - {fileID: 1658671392}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1544123376
 GameObject:
@@ -9939,7 +10066,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1621396601
 GameObject:
@@ -9998,7 +10125,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1621396604
 MonoBehaviour:
@@ -10243,7 +10370,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1784632567
 GameObject:
@@ -10332,7 +10459,7 @@ Transform:
   m_Children:
   - {fileID: 1871694429}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1871694428
 GameObject:
@@ -10469,7 +10596,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1903166100
 GameObject:
@@ -10594,7 +10721,7 @@ Transform:
   m_Children:
   - {fileID: 897901794}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1971464580
 GameObject:
@@ -10655,7 +10782,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1977831252
 GameObject:
@@ -11261,7 +11388,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1735192598383358255, guid: f75c9b4a63214aa49bb2869835161b02, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1735192598383358255, guid: f75c9b4a63214aa49bb2869835161b02, type: 3}
       propertyPath: m_LocalPosition.x
