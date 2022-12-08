@@ -62,7 +62,7 @@ public class Skeleton : MonoBehaviour
             {
                 Vector2 movimiento = new Vector2(direccion.x, 0);
                 movimiento = movimiento.normalized;
-                rb.velocity = movimiento * velocidadMovimiento;
+                rb.velocity = new Vector2 (movimiento.x * velocidadMovimiento, rb.velocity.y);
                 anim.SetBool("caminando", true);
                 CambiarVista(movimiento.x);
 
@@ -99,6 +99,7 @@ public class Skeleton : MonoBehaviour
         anim.SetBool("disparando", true);
         yield return new WaitForSeconds(1.42f);
         anim.SetBool("disparando", false);
+        direccionFlecha = (player.transform.position - transform.position).normalized * distanciaDeteccionFlecha;
         direccionFlecha = direccionFlecha.normalized;
 
         GameObject flechaGO = Instantiate(flecha, transform.position, Quaternion.identity);
@@ -121,11 +122,19 @@ public class Skeleton : MonoBehaviour
         else
         {
             StartCoroutine(AgitarCamara(0.1f));
+            
+        }
+    }
+
+    private void Morir()
+    {
+        if(vidas <= 0)
+        {
             velocidadMovimiento = 0;
             rb.velocity = Vector2.zero;
             Destroy(this.gameObject, 0.2f);
+            
         }
-
     }
 
     private IEnumerator AgitarCamara(float tiempo)
@@ -134,6 +143,7 @@ public class Skeleton : MonoBehaviour
         cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = 5;
         yield return new WaitForSeconds(tiempo);
         cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = 0;       
+        Morir();
     }
     private IEnumerator EfectoDaño()
     {

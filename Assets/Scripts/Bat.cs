@@ -110,6 +110,14 @@ public class Bat : MonoBehaviour
         }
         else
         {
+            
+        }
+    }
+
+    private void Morir()
+    {
+        if(vidas <=0)
+        {
             Destroy(gameObject, 0.2f);
         }
     }
@@ -120,6 +128,7 @@ public class Bat : MonoBehaviour
         cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = 5;
         yield return new WaitForSeconds(tiempo);
         cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = 0;
+        Morir();
     }
 
     private IEnumerator EfectoDaño()

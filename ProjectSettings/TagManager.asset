@@ -45,6 +45,24 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BG
+    uniqueID: 2362638881
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Props
+    uniqueID: 889125579
+    locked: 0
+  - name: Tiles
+    uniqueID: 2351281517
+    locked: 0
+  - name: Enemigos
+    uniqueID: 1529799623
+    locked: 0
+  - name: Player
+    uniqueID: 1758369015
+    locked: 0
+  - name: UI
+    uniqueID: 186043155
     locked: 0

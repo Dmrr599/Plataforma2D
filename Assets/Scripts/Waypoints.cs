@@ -41,6 +41,12 @@ public class Waypoints : MonoBehaviour
         {
             CambiarEscalaEnemigo();
         }
+
+        if(aplicarFuerza)
+        {
+            rb.AddForce((transform.position - player.transform.position).normalized * 10, ForceMode2D.Impulse);
+            aplicarFuerza = false;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -59,7 +65,7 @@ public class Waypoints : MonoBehaviour
             }
         } else if(collision.gameObject.CompareTag("Player") && gameObject.CompareTag("Plataforma"))
         {
-            if(player.transform.position.y - 0.7f > transform.position.y)
+            if(player.transform.position.y - 0.5f > transform.position.y)
             {
                 player.transform.parent = transform;
             }
@@ -128,11 +134,19 @@ public class Waypoints : MonoBehaviour
         else
         {
             StartCoroutine(AgitarCamara(0.1f));
+            
+        }
+
+    }
+
+    private void Morir()
+    {
+        if(vidas <= 0)
+        {
             velocidadDesplazamiento = 0;
             rb.velocity = Vector2.zero;
             Destroy(this.gameObject, 0.2f);
         }
-
     }
 
     private IEnumerator AgitarCamara(float tiempo)
@@ -140,7 +154,8 @@ public class Waypoints : MonoBehaviour
         CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin = cm.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
         cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = 5;
         yield return new WaitForSeconds(tiempo);
-        cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = 0;       
+        cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = 0;
+        Morir();       
     }
     private IEnumerator EfectoDaño()
     {

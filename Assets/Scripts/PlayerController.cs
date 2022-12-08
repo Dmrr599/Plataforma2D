@@ -6,7 +6,13 @@ using Cinemachine;
 public class PlayerController : MonoBehaviour
 {
    
+    private GameObject ultimoEnemigo;
+    
     private int direccionX;
+
+    
+
+    //public AudioSource soundSaltar;
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -25,6 +31,7 @@ public class PlayerController : MonoBehaviour
     public float velocidadDeslizar;
     public int vidas = 3;
     public float tiempoInmortalidad;
+    
 
     [Header("Colisiones")]
     public LayerMask layerPiso;
@@ -48,6 +55,7 @@ public class PlayerController : MonoBehaviour
     public bool esInmortal;
     public bool aplicarFuerza;
     public bool terminandoMapa;
+    
 
 
     private void Awake(){
@@ -107,6 +115,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void MostrarVidasUI()
+    {
+        for(int i = 0; i < GameManager.instance.vidasUI.transform.childCount; i++) // recorrido 3 veces
+        {
+            GameManager.instance.vidasUI.transform.GetChild(i).gameObject.SetActive(true);
+        }
+    }
+
         
     public void ActualizarVidasUI(int vidasADescontar)
     {
@@ -135,7 +151,7 @@ public class PlayerController : MonoBehaviour
         {
             velocidadDeMovimiento = 0;
             rb.velocity = Vector2.zero;
-            rb.AddForce(-direccionDaño * 25, ForceMode2D.Impulse);
+            rb.AddForce(-direccionDaño * 10, ForceMode2D.Impulse);
             aplicarFuerza = false;
         }
     }
@@ -197,7 +213,27 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = (new Vector2(direccionX * velocidadDeMovimiento, rb.velocity.y));
         }
+        
+        if(!esInmortal && ultimoEnemigo != null)
+    {
        
+        Physics2D.IgnoreCollision(ultimoEnemigo.GetComponent<Collider2D>(), GetComponent<Collider2D>(), false);
+        ultimoEnemigo = null;
+    }
+       
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Enemigo"))
+            {     
+                if(esInmortal)
+            {
+                ultimoEnemigo = collision.gameObject;
+                Physics2D.IgnoreCollision(ultimoEnemigo.GetComponent<Collider2D>(), GetComponent<Collider2D>(), true);
+            }
+        }
+    
     }
 
     private void Atacar(Vector2 direccion)
@@ -501,6 +537,8 @@ public class PlayerController : MonoBehaviour
     {
         rb.velocity = new Vector2(rb.velocity.x, 0);
         rb.velocity += Vector2.up * fuerzaDeSalto;
+        //soundSaltar.Play();
+
 
     }
 
@@ -566,6 +604,5 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
-        }
-        
-    }
+        }        
+}

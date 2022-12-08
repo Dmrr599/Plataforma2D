@@ -75,9 +75,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingLayerID: 1758369015
+  m_SortingLayer: 4
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 57f0a7857848de44b8ae5ef2417d7e16, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -142,6 +142,8 @@ MonoBehaviour:
   fuerzaDeSalto: 14
   velocidadDash: 20
   velocidadDeslizar: 1.5
+  vidas: 3
+  tiempoInmortalidad: 3
   layerPiso:
     serializedVersion: 2
     m_Bits: 64
@@ -150,10 +152,10 @@ MonoBehaviour:
   derecha: {x: 0.6, y: 0}
   izquierda: {x: -0.6, y: 0}
   puedeMover: 1
-  enSuelo: 0
+  enSuelo: 1
   puedeDash: 0
   haciendoDash: 0
-  tocadoPiso: 0
+  tocadoPiso: 1
   haciendoShake: 0
   estaAtacando: 0
   enMuro: 0
@@ -161,6 +163,9 @@ MonoBehaviour:
   muroIzquierdo: 0
   agarrarse: 0
   saltarDeMuro: 0
+  esInmortal: 0
+  aplicarFuerza: 0
+  terminandoMapa: 0
 --- !u!95 &1735192598383358251
 Animator:
   serializedVersion: 4
